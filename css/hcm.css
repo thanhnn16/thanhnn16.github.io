@@ -1,0 +1,28 @@
+.hotel {
+    position: relative;
+    overflow: hidden;
+    max-height: 220px;
+    max-width: 400px;
+    height: 100%;
+    width: 100%;
+    margin: 10px;
+}
+.hotel img {
+    object-fit: cover;
+}
+
+.hotel .des {
+    position: absolute;
+    left: -250px;
+    bottom: 30px;
+    transition: all 0.25s ease-in-out;
+}
+.hotel .des span {
+    font-weight: 400;
+    font-size: 1.2rem;
+}
+.hotel:hover .des {
+    bottom: 30px;
+    color: white;
+    left: 30px;
+}

@@ -1,0 +1,49 @@
+.about__banner {
+  height: 700px;
+  width: 100%;
+}
+
+.about__banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.world__map {
+  background-image: url(../img/about/worldmap.png);
+  background-size: cover;
+  height: 550px;
+  width: 100%;
+  background-position: center;
+}
+
+.static_content {
+  text-align: center;
+  color: #fff;
+  font-weight: 300;
+  margin: 0 auto;
+  max-width: 1110px;
+  min-width: 620px;
+  clear: both;
+  padding: 58px 46px 28px 46px;
+  object-fit: cover;
+  font-size: 1rem;
+}
+
+@media screen and (max-width: 1180px) {
+  .about__banner {
+    height: 100%;
+  }
+  .static_content {
+    width: 100%;
+  }
+  .world__map {
+    height: 100%;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .static_content {
+    min-width: unset;
+    padding: 38px 30px 8px 30px;
+  }

@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <title>Charmplace - ABOUT</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+  <link rel="stylesheet" href="./css/about.css">
+  <script src="./script/script.js" defer></script>
+  <script src="./script/bootstrap.bundle.min.js" defer></script>
+  <link rel="shortcut icon" href="./img/logo/logo.png" type="image/png" />
+</head>
+
+<body>
+  <div class="container-fluid text-center">
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-light fixed-top" aria-label="menu">
+        <div class="logo">
+          <a class="navbar-brand" href="./index.html"><img src="img/logo/logo.png" alt="logo" /></a>
+        </div>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="index.html" title="Trang chủ">HOME</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="about.html" title="Giới thiệu">ABOUT</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false" title="Thư viện">GALLERY</a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="./ho-chi-minh.html">Ho Chi Minh</a></li>
+                <li><a class="dropdown-item" href="./ha-noi.html">Ha Noi</a></li>
+                <li><a class="dropdown-item" href="./hoi-an.html">Hoi An</a></li>
+                <li><a class="dropdown-item" href="./ha-long-bay.html">Ha Long Bay</a></li>
+                <li><a class="dropdown-item" href="./da-lat.html">Da Lat</a></li>
+                <li>
+                  <hr class="dropdown-divider" />
+                </li>
+                <li>
+                  <a class="dropdown-item" href="./all.html">ALL...</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="blog.html" title="Blog">BLOG</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="contact-us.html" title="Liên hệ chúng tôi">CONTACT US</a>
+            </li>
+          </ul>
+          <button type="button" class="btn btn-outline-light text-dark me-4" data-bs-toggle="modal"
+            data-bs-target="#login-form" data-bs-backdrop="true">
+            LOGIN
+          </button>
+          <!-- The Modal -->
+          <div class="modal" id="login-form">
+            <div class="modal-dialog modal-dialog-centered modal-xl">
+              <div class="modal-content">
+                <!-- Modal Header -->
+                <div class="modal-header">
+                  <h4 class="modal-title">LOGIN</h4>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <!-- Modal body -->
+                <div class="modal-body">
+                  <div class="h-custom">
+                    <div class="row d-flex justify-content-center align-items-center h-100">
+                      <div class="col-md-9 col-lg-6 col-xl-5">
+                        <img src="./img/logo/logo.png" class="img-fluid" alt="Sample image">
+                      </div>
+                      <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+                        <form>
+                          <div
+                            class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
+                            <p class="lead fw-normal mb-0 me-3">Sign in with</p>
+                            <button type="button" class="btn btn-primary btn-floating mx-1">
+                              <i class="fab fa-facebook-f"></i>
+                            </button>
+
+                            <button type="button" class="btn btn-primary btn-floating mx-1">
+                              <i class="fab fa-twitter"></i>
+                            </button>
+
+                            <button type="button" class="btn btn-primary btn-floating mx-1">
+                              <i class="fab fa-linkedin-in"></i>
+                            </button>
+                          </div>
+
+                          <div class="divider d-flex align-items-center my-4">
+                            <p class="text-center fw-bold mx-3 mb-0">Or</p>
+                          </div>
+
+                          <!-- Email input -->
+                          <div class="form-outline mb-4">
+                            <input type="email" id="form3Example3" class="form-control form-control-lg"
+                              placeholder="Enter a valid email address" />
+                            <label class="form-label" for="form3Example3">Email address</label>
+                          </div>
+                          <!-- Password input -->
+                          <div class="form-outline mb-3">
+                            <input type="password" id="form3Example4" class="form-control form-control-lg"
+                              placeholder="Enter password" />
+                            <label class="form-label" for="form3Example4">Password</label>
+                          </div>
+                          <div class="d-flex justify-content-between align-items-center">
+                            <!-- Checkbox -->
+                            <div class="form-check mb-0">
+                              <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3" />
+                              <label class="form-check-label" for="form2Example3">
+                                Remember me
+                              </label>
+                            </div>
+                            <a href="#!" class="text-body">Forgot password?</a>
+                          </div>
+                          <div class="text-center text-lg-start mt-4 pt-2">
+                            <button type="button" class="btn btn-primary btn-lg"
+                              style="padding-left: 2.5rem; padding-right: 2.5rem;">Login</button>
+                            <p class="small fw-bold mt-2 pt-1 mb-0">Don't have an account? <a href="register.html"
+                                class="link-danger">Register</a></p>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                </div>
+
+              </div>
+            </div>
+          </div>
+          <form class="d-flex">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-danger" type="submit">Search</button>
+          </form>
+        </div>
+      </nav>
+    </header>
+    <div id="back-to-top">
+      <button onclick="topFunction()"><svg xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 320 512"><!--! Font Awesome Pro 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+          <path
+            d="M182.6 137.4c-12.5-12.5-32.8-12.5-45.3 0l-128 128c-9.2 9.2-11.9 22.9-6.9 34.9s16.6 19.8 29.6 19.8H288c12.9 0 24.6-7.8 29.6-19.8s2.2-25.7-6.9-34.9l-128-128z" />
+        </svg></button>
+    </div>
+    <section class="about__banner">
+      <img src="./img/page_about_banner.jpg" alt="banner" />
+    </section>
+  </div>
+  <section class="page__about">
+    <div class="container">
+      <h2 class="mb-4 mt-5">About Us</h2>
+      <p>
+        Charmplace is a new brand in the online hotel booking industry. Our mission is to provide customers with a
+        seamless and memorable booking experience, and we are confident that we will become a trusted partner of
+        travelers around the world.</p>
+      <p>Founded in May 2023 by a group of travel enthusiasts and experts, Charmplace is committed to improving the
+        hotel booking experience for customers through technology and professional services. We strive to become one of
+        the leading companies in the hotel booking industry, and we promise to continuously innovate and improve to meet
+        the needs of our customers.</p>
+      <p>At Charmplace, we understand that finding the right accommodation is an important part of any trip. That's why
+        we offer a wide selection of hotels, resorts, apartments, and more, to suit every budget and preference. Our
+        user-friendly platform allows customers to easily search for and book their desired accommodation with just a
+        few clicks. We also offer personalized recommendations based on your travel preferences and past bookings,
+        ensuring that you find the perfect place to stay every time.</p>
+      <p>In addition to our booking services, Charmplace also provides 24/7 customer support to assist with any
+        questions or concerns you may have. We strive to provide the best possible customer service, and our team is
+        always ready to go above and beyond to ensure your satisfaction.</p>
+      <p>At Charmplace, we believe that travel should be a source of joy and inspiration, and we are dedicated to making
+        your travel experiences as smooth and memorable as possible. Join us on this exciting journey, and let
+        Charmplace be your trusted companion in your travels.</p>
+    </div>
+  </section>
+  <section class="world__map mt-5">
+    <div class="container-fluid">
+      <div class="static_content">
+        <div class="static_content-section">
+          <p>Charmplace B.V. is based in Amsterdam in the Netherlands, and is supported internationally by 198 offices
+            in over 70 countries around the world: Accra - Amman - Amsterdam - Antalya - Athens - Atlanta - Auckland -
+            Bangalore - Bangkok - Barcelona - Beijing - Berlin - Bilbao - Bogotá - Bolzano - Bordeaux - Boston -
+            Bratislava - Brisbane - Bristol - Brussels - Bucharest - Budapest - Buenos Aires - Cairo - Calgary -
+            Cambridge - Cancún - Cape Town - Casablanca - Catania - Chengdu - Chicago - Colombo - Copenhagen - Dallas -
+            Denver - Dubai - Dublin - Dubrovnik - Dusseldorf - Edinburgh - Faro - Florence - Frankfurt am Main -
+            Freiburg im Breisgau - Fukuoka - Grand Rapids - Guadalajara - Guangzhou - Haikou - Hamburg - Hanoi -
+            Helsinki - Heraklion - Ho Chi Minh City - Hong Kong - Honolulu - Houston - Innsbruck - Istanbul - İzmir -
+            Jakarta - Jeddah - Jeju - Johannesburg - Kiev - Koh Samui - Krakow - Kuala Lumpur - Kuta (Bali) - Las Palmas
+            de Gran Canaria - Las Vegas - Lille - Lima - Limassol - Lisbon - Ljubljana - London - Los Angeles - Lyon -
+            Madrid - Málaga - Manchester - Manila - Marrakech - Melbourne - Mexico City - Miami - Milan - Montpellier -
+            Montréal - Moscow - Mumbai - Munich - Naha - Nairobi - Natal - New Delhi - New Orleans - New York - Nice -
+            Norwalk - Orlando - Osaka - Oslo - Palma de Mallorca - Panama City - Paris - Phoenix - Phuket - Porto Alegre
+            - Prague - Qingdao - Rennes - Reykjavík - Riga - Rimini - Rio de Janeiro - Rome - Saint Petersburg -
+            Sallanches - Salzburg - San Diego - San Francisco - San Jose - San Juan - Santiago - Santo Domingo - São
+            Paulo - Sapporo - Seattle - Seoul - Seville - Shanghai - Siem Reap - Singapore - Sochi - Sofia - Sorrento -
+            Split - Stockholm - Strasbourg - Sydney - Taipei - Tallinn - Tbilisi - Tel Aviv - Thessaloníki - Tokyo -
+            Toronto - Trabzon - Vancouver - Venice - Verona - Vienna - Vilnius - Warsaw - Washington - Xi'an - Yangon -
+            Yogyakarta - Zagreb - Zurich</p>
+          <p>Charmplace B.V. is registered with the trade register of the Chamber of Commerce in Rotterdam, the Netherlands, under registration number 45829873. Our company was founded in Paris, France, in June 2023. Our VAT registration number is FR57392753491, and we are also registered with the French Data Protection Authority under registration number 723865.</p>
+        </div>
+      </div>
+    </div>
+
+  </section>
+  <div class="container-fluid">
+    <footer>
+      <div class="col-lg-4">
+        <h4>About</h4>
+        <p>Powered Nông Nguyễn Thành</p>
+        <p>PS28372 - CP18301</p>
+        <p>Copyright © 2023. All rights reserved.</p>
+      </div>
+      <div class="col-lg-4">
+        <h4>Links</h4>
+        <a rel="noopener" href="https://fb.com/thanhnn0106" target="_blank">
+          <i class="fab fa-facebook"></i>
+          <span>Nguyễn Thành</span>
+        </a>
+        <a href="#">
+          <i class="fab fa-facebook-messenger"></i>
+          <span>Nguyễn Thành</span>
+        </a>
+        <a href="#">
+          <i class="fab fa-instagram"></i>
+          <span>Nguyễn Thành</span>
+        </a>
+        <a href="#">
+          <i class="fab fa-youtube"></i>
+          <span>Miwth</span>
+        </a>
+      </div>
+      <div class="col-lg-4">
+        <h4>Contacts</h4>
+        <p>
+          <i class="fas fa-map-marker-alt"></i> Address: 1358 Quang Trung St.,
+          Go Vap Dis.
+        </p>
+        <p><i class="fas fa-phone"></i> Phone: (0)34 - 654 - 2636</p>
+        <p>
+          <i class="fas fa-envelope"></i> Email: nongnguyenthanh@outlook.com
+        </p>
+      </div>
+    </footer>
+  </div>
+</body>
+
+</html>

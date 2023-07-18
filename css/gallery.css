@@ -1,0 +1,115 @@
+.explorer__vietnam {
+  margin: 0 auto;
+  width: 100% !important;
+}
+#VN-img {
+  margin: 0 auto;
+  max-width: 1000px !important;
+  width: 100% !important;
+  max-height: 550px !important;
+  height: 100% !important;
+}
+.carousel-inner {
+  width: 100% !important;
+  height: 100% !important;
+}
+.explorer__vietnam img {
+  height: 100% !important;
+  filter: brightness(0.9) contrast(1.2);
+  border-radius: 10px;
+  max-height: 550px !important;
+  object-fit: cover;
+}
+h1 {
+  position: relative;
+}
+h1::before {
+  content: "";
+  position: absolute;
+  right: calc(50% - 100px);
+  width: 200px;
+  height: 5px;
+  background: red;
+  bottom: -5px;
+  border-radius: 5px;
+}
+
+.bg1 {
+  padding: 10px;
+}
+
+.bg2 {
+  padding: 10px;
+}
+.card {
+  max-width: 350px;
+  max-height: 250px;
+  height: 100%;
+  width: 100%;
+}
+.card-body {
+  width: 100% !important;
+  height: 100% !important;
+}
+.card-body img {
+  width: 100% !important;
+  height: 100% !important;
+  border-radius: 5px;
+  filter: brightness(0.9) contrast(1.2);
+  object-fit: cover;
+  transition: all linear 0.25s;
+}
+.card-body img:hover {
+  filter: brightness(0.95) contrast(1.1);
+  transform: scale(1.01);
+}
+
+@media screen and (max-width: 1180px) {
+  .explorer__vietnam img {
+    max-height: 500px !important;
+  }
+  #VN-img {
+    max-width: 900px !important;
+    max-height: 500px !important;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .explorer__vietnam img {
+    max-height: 350px !important;
+  }
+  #VN-img {
+    max-width: 800px !important;
+    max-height: 350px !important;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .explorer__vietnam img {
+    max-height: 280px !important;
+  }
+  #VN-img {
+    max-width: 600px !important;
+    max-height: 280px !important;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .explorer__vietnam img {
+    max-height: 210px !important;
+  }
+  #VN-img {
+    max-width: 600px !important;
+    max-height: 210px !important;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .explorer__vietnam img {
+    max-height: 150px !important;
+  }
+  #VN-img {
+    max-width: 500px !important;
+    max-height: 150px !important;
+  }
+}

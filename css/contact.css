@@ -1,0 +1,31 @@
+.contact_us {
+  background-image: url("../img/06.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 800px;
+  width: 100%;
+  padding: 180px 100px;
+}
+
+.lien-he span {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+.card {
+    width: 90%;
+}
+
+@media screen and (max-width: 992px) {
+  .contact_us {
+    height: 100%;
+    padding: 80px 30px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .card {
+    width: 100% !important;
+  }
+  .d-inline-flex {
+    flex-direction: column !important;
+  }
+}
