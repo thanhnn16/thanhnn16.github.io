@@ -378,7 +378,7 @@ i#next {
 /* back top top */
 #back-to-top {
   position: fixed;
-  display: block;
+  display: none;
   bottom: 50px;
   right: 10px;
   z-index: 2;

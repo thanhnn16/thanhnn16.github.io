@@ -4,30 +4,18 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/bootstrap.min.css" />
-    <link rel="stylesheet" href="css/style.css" />
-    <title>Charmplace - BLOG</title>
+    <link rel="stylesheet" href="../../public/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../../public/css/style.css" />
+    <link rel="stylesheet" href="../../public/css/gallery/hcm.css" />
+    <title>Charmplace - Ho Chi Minh</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
     />
-    <script src="./script/script.js" defer></script>
-    <script src="./script/bootstrap.bundle.min.js" defer></script>
-    <link rel="shortcut icon" href="./img/logo/logo.png" type="image/png" />
-    <style>
-      .about__banner {
-        height: 700px;
-        width: 100%;
-      }
-
-      .about__banner img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-    </style>
+    <script src="../../public/script/script.js" defer></script>
+    <script src="../../public/script/bootstrap.bundle.min.js" defer></script>
+    <link rel="shortcut icon" href="../../public/img/logo/logo.png" type="image/png" />
   </head>
-
   <body>
     <div class="container-fluid text-center">
       <header>
@@ -36,8 +24,8 @@
           aria-label="menu"
         >
           <div class="logo">
-            <a class="navbar-brand" href="./index.html"
-              ><img src="img/logo/logo.png" alt="logo"
+            <a class="navbar-brand" href="index.html"
+              ><img src="../../public/img/logo/logo.png" alt="logo"
             /></a>
           </div>
           <button
@@ -80,29 +68,29 @@
                 >
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                   <li>
-                    <a class="dropdown-item" href="./ho-chi-minh.html"
+                    <a class="dropdown-item" href="ho-chi-minh.html"
                       >Ho Chi Minh</a
                     >
                   </li>
                   <li>
-                    <a class="dropdown-item" href="./ha-noi.html">Ha Noi</a>
+                    <a class="dropdown-item" href="ha-noi.html">Ha Noi</a>
                   </li>
                   <li>
-                    <a class="dropdown-item" href="./hoi-an.html">Hoi An</a>
+                    <a class="dropdown-item" href="hoi-an.html">Hoi An</a>
                   </li>
                   <li>
-                    <a class="dropdown-item" href="./ha-long-bay.html"
+                    <a class="dropdown-item" href="ha-long-bay.html"
                       >Ha Long Bay</a
                     >
                   </li>
                   <li>
-                    <a class="dropdown-item" href="./da-lat.html">Da Lat</a>
+                    <a class="dropdown-item" href="da-lat.html">Da Lat</a>
                   </li>
                   <li>
                     <hr class="dropdown-divider" />
                   </li>
                   <li>
-                    <a class="dropdown-item" href="./all.html">ALL...</a>
+                    <a class="dropdown-item" href="all.html">ALL...</a>
                   </li>
                 </ul>
               </li>
@@ -150,7 +138,7 @@
                       >
                         <div class="col-md-9 col-lg-6 col-xl-5">
                           <img
-                            src="./img/logo/logo.png"
+                            src="../../public/img/logo/login.jpg"
                             class="img-fluid"
                             alt="Sample image"
                           />
@@ -248,7 +236,7 @@
                               </button>
                               <p class="small fw-bold mt-2 pt-1 mb-0">
                                 Don't have an account?
-                                <a href="register.html" class="link-danger"
+                                <a href="../../../register.html" class="link-danger"
                                   >Register</a
                                 >
                               </p>
@@ -285,74 +273,78 @@
             </form>
           </div>
         </nav>
+        <div id="back-to-top">
+          <button onclick="topFunction()">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+              <!--! Font Awesome Pro 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+              <path
+                d="M182.6 137.4c-12.5-12.5-32.8-12.5-45.3 0l-128 128c-9.2 9.2-11.9 22.9-6.9 34.9s16.6 19.8 29.6 19.8H288c12.9 0 24.6-7.8 29.6-19.8s2.2-25.7-6.9-34.9l-128-128z"
+              />
+            </svg>
+          </button>
+        </div>
       </header>
-      <div id="back-to-top">
-        <button onclick="topFunction()">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
-            <!--! Font Awesome Pro 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
-            <path
-              d="M182.6 137.4c-12.5-12.5-32.8-12.5-45.3 0l-128 128c-9.2 9.2-11.9 22.9-6.9 34.9s16.6 19.8 29.6 19.8H288c12.9 0 24.6-7.8 29.6-19.8s2.2-25.7-6.9-34.9l-128-128z"
-            />
-          </svg>
-        </button>
-      </div>
-      <section class="about__banner">
-        <img src="./img/page_about_banner.jpg" alt="banner" />
-      </section>
     </div>
-    <section class="blog">
-      <div class="container">
-        <h1>BLOG</h1>
-        <div class="row mt-3">
-          <div class="col-lg-8 col-md-6">
-            <div class="about_us">
-              <img src="./img/block3.jpg" alt="anh-1" />
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Ducimus qui atque saepe consectetur adipisicing elit. Lorem
-                ipsum dolor sit amet, consectetur adipisicing elit. Ducimus qui
-                atque saepe...
-              </p>
-              <a href="./blog.html"><button>READ MORE</button></a>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6">
-            <div class="row mt-3">
-              <div class="noi_dung">
-                <div class="block_noidung">
-                  <img src="./img/blog1.jpg" alt="anh-1" />
-                </div>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  Ducimus qui atque saepe
-                </p>
-              </div>
-            </div>
-            <div class="row mt-3">
-              <div class="noi_dung">
-                <div class="block_noidung">
-                  <img src="./img/blog2.jpg" alt="anh-1" />
-                </div>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  Ducimus qui atque saepe
-                </p>
-              </div>
-            </div>
-            <div class="row mt-3">
-              <div class="noi_dung">
-                <div class="block_noidung">
-                  <img src="./img/blog3.jpg" alt="anh-1" />
-                </div>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  Ducimus qui atque saepe
-                </p>
-              </div>
-            </div>
-          </div>
+    <section class="py-5 text-center">
+      <h1>Best Hotel in Ho Chi Minh</h1>
+      <!-- Gallery -->
+      <div class="row">
+        <div class="hotel col-lg-6 col-md-6">
+          <a href="detail.html"
+            ><img
+              src="../../public/img/hcm/lavelahotel.jpg"
+              class="w-100 shadow-1-strong rounded mb-4"
+              alt="Lavela SaiGon Hotel"
+          /></a>
+          <div class="des"><span>Lavela SaiGon Hotel</span></div>
+        </div>
+        <div class="hotel col-lg-6 col-md-6">
+          <a href="detail.html"
+            ><img
+              src="../../public/img/hcm/02.jpg"
+              class="w-100 shadow-1-strong rounded mb-4"
+              alt="Lavela SaiGon Hotel"
+          /></a>
+          <div class="des"><span>Lavela SaiGon Hotel</span></div>
+        </div>
+        <div class="hotel col-lg-6 col-md-6">
+          <a href="detail.html"
+            ><img
+              src="../../public/img/hcm/03.jpg"
+              class="w-100 shadow-1-strong rounded mb-4"
+              alt="Lavela SaiGon Hotel"
+          /></a>
+          <div class="des"><span>Lavela SaiGon Hotel</span></div>
+        </div>
+        <div class="hotel col-lg-6 col-md-6">
+          <a href="detail.html"
+            ><img
+              src="../../public/img/hcm/04.jpg"
+              class="w-100 shadow-1-strong rounded mb-4"
+              alt="Lavela SaiGon Hotel"
+          /></a>
+          <div class="des"><span>Lavela SaiGon Hotel</span></div>
+        </div>
+        <div class="hotel col-lg-6 col-md-6">
+          <a href="detail.html"
+            ><img
+              src="../../public/img/hcm/05.jpg"
+              class="w-100 shadow-1-strong rounded mb-4"
+              alt="Lavela SaiGon Hotel"
+          /></a>
+          <div class="des"><span>Lavela SaiGon Hotel</span></div>
+        </div>
+        <div class="hotel col-lg-6 col-md-6">
+          <a href="detail.html"
+            ><img
+              src="../../public/img/hcm/06.jpg"
+              class="w-100 shadow-1-strong rounded mb-4"
+              alt="Lavela SaiGon Hotel"
+          /></a>
+          <div class="des"><span>Lavela SaiGon Hotel</span></div>
         </div>
       </div>
+      <!-- Gallery -->
     </section>
     <div class="container-fluid">
       <footer>
