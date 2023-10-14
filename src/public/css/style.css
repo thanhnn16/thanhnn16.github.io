@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
 * {
   box-sizing: border-box;
   font-family: "Oswald", sans-serif;
@@ -106,6 +107,7 @@ header img {
 .container-fluid .navbar {
   background-color: #fffffff6;
   width: 100%;
+  height: 60px;
   margin: 0 auto;
   padding: 0 30px;
 }
@@ -122,16 +124,14 @@ header img {
 .navbar .nav-link {
   color: black;
   margin: 0 2px !important;
-  padding-left: 0px !important;
-  padding-right: 0px !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
   margin-right: 15px !important;
 }
 .navbar .nav-link:hover {
   text-decoration: none;
   color: red;
   font-weight: 400;
-  padding-bottom: 2px !important;
-  border-bottom: 2px solid red;
   display: block;
 }
 .dropdown-menu .dropdown-item {
@@ -223,6 +223,9 @@ header img {
   background-color: rgba(190, 181, 181, 0.388);
   padding: 20px 0;
 }
+.recommended span {
+  overflow: clip;
+}
 .explorer {
   padding: 20px 0;
   background-color: rgba(187, 177, 177, 0.588);
@@ -268,6 +271,7 @@ header img {
 [class*="anh"] img {
   width: 100%;
   height: 100%;
+  max-height: 150px;
   object-fit: cover;
   border-radius: 5px;
 }
@@ -281,7 +285,7 @@ header img {
   text-align: center;
 }
 .banchay__desc h3 {
-  margin: 0px;
+  margin: 0;
 }
 
 .banchay__desc .bedroom {

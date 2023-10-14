@@ -1,0 +1,574 @@
+<style>
+
+    #myImg {
+        border-radius: 5px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    #myImg:hover {opacity: 0.7;}
+
+    /* The Modal (background) */
+    .modal {
+        display: none; /* Hidden by default */
+        position: fixed; /* Stay in place */
+        z-index: 1; /* Sit on top */
+        padding-top: 100px; /* Location of the box */
+        left: 0;
+        top: 0;
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        overflow: auto; /* Enable scroll if needed */
+        background-color: rgb(0,0,0); /* Fallback color */
+        background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+    }
+
+    /* Modal Content (image) */
+    .modal-content {
+        margin: auto;
+        display: block;
+        width: 80%;
+        max-width: 700px;
+    }
+
+    /* Caption of Modal Image */
+    #caption {
+        margin: auto;
+        display: block;
+        width: 80%;
+        max-width: 700px;
+        text-align: center;
+        color: #ccc;
+        padding: 10px 0;
+        height: 150px;
+    }
+
+    /* Add Animation */
+    .modal-content, #caption {
+        -webkit-animation-name: zoom;
+        -webkit-animation-duration: 0.6s;
+        animation-name: zoom;
+        animation-duration: 0.6s;
+    }
+
+    @-webkit-keyframes zoom {
+        from {-webkit-transform:scale(0)}
+        to {-webkit-transform:scale(1)}
+    }
+
+    @keyframes zoom {
+        from {transform:scale(0)}
+        to {transform:scale(1)}
+    }
+
+    /* The Close Button */
+    .close {
+        position: absolute;
+        top: 15px;
+        right: 35px;
+        color: #f1f1f1;
+        font-size: 40px;
+        font-weight: bold;
+        transition: 0.3s;
+    }
+
+    .close:hover,
+    .close:focus {
+        color: #bbb;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    @media only screen and (max-width: 700px){
+        .modal-content {
+            width: 100%;
+        }
+    }
+
+    #toggleContainer label {
+        text-align: center;
+        width: 70px;
+    }
+
+    #container {
+        height: 100vh;
+        /*width: 100%;*/
+        box-sizing: border-box;
+    }
+
+    #toggleContainer {
+        height: 10vh;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        width: 95vw;
+        position: absolute;
+    }
+
+    #tilesContainer {
+        min-height: 90vh;
+        display: flex;
+        justify-content: center;
+        align-items: start;
+        flex-wrap: wrap;
+        box-sizing: border-box;
+
+    }
+
+    .tileItem {
+        width: 250px;
+        height: 250px;
+        margin: 5px;
+        border-radius: 5px;
+
+        transition: all 0.5s ease;
+    }
+
+    .tileItem:hover {
+        transform: scale(1.05);
+        transition: all 0.5s ease;
+    }
+
+    #galleryContainer {
+        height: 500px;
+        background: transparent;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        box-sizing: border-box;
+        position: relative;
+    }
+
+    #toggle {
+        display: flex;
+        align-items: center;
+    }
+
+    #tilesView {
+        min-height: 100vh;
+        display: none;
+        justify-content: center;
+    }
+
+    #galleryView {
+        display: flex;
+        justify-content: center;
+    }
+
+    #outer3 {
+        width: 100px;
+        height: 40px;
+        background-color: white;
+        margin: 10px auto;
+        border-radius: 3px;
+        border: 2px solid white;
+        transition: all 0.5s;
+    }
+
+    #slider3 {
+        height: 36px;
+        width: 46px;
+        background-color: orange;
+        border-radius: 3px;
+        transition: all 0.5s;
+    }
+
+    #slider3.active {
+        -webkit-transform: translatex(50px);
+        -ms-transform: translatex(50px);
+        -o-transform: translatex(50px);
+        transform: translatex(50px);
+        transition: all 0.5s;
+        background-color: orange;
+    }
+
+    #outer3.outerActive {
+        background-color: white;
+        border: 2px solid white;
+        transition: all 0.5s;
+    }
+
+    #mainView {
+        height: 400px;
+        width: 400px;
+        border-radius: 5px;
+        background-color: #eb9100;
+        margin-left: 10px;
+        margin-right: 10px;
+        z-index: 1;
+        transition: all 1s;
+    }
+
+    #mainView img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    #mainView:hover {
+        transform: scale(1.2);
+        transition: all 1s;
+    }
+
+    #leftView {
+        height: 400px;
+        width: 150px;
+        opacity: 0.5;
+        border-radius: 5px;
+        transform: skewy(5deg);
+        transform-origin: top right;
+        background-color: #eb9100;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: all 1s;
+    }
+
+    #leftView:hover {
+        opacity: 1;
+        transition: all 1s;
+    }
+
+    #rightView {
+        height: 350px;
+        width: 100px;
+        opacity: 0.5;
+        border-radius: 5px;
+        transform: skewy(-5deg);
+        transform-origin: top left;
+        background-color: #eb9100;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: all 1s;
+    }
+
+    #rightView:hover {
+        opacity: 1;
+        transition: all 1s;
+    }
+
+    .navBtns {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        border: none;
+        position: absolute;
+        opacity: 0.8;
+        background-color: transparent;
+        cursor: pointer;
+        color: white;
+    }
+
+    .navBtns:hover {
+        opacity: 1;
+        transition: all 1s;
+        background-color: #e3c595;
+    }
+
+    #navLeft {
+        left: 30px;
+    }
+
+    #navRight {
+        right: 30px;
+    }
+
+    #linkTag {
+        cursor: pointer;
+        z-index: 1;
+        box-sizing: border-box;
+    }
+    .cd__main {
+        background: #fff;
+        padding: 30px;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        flex-wrap: wrap;
+        display: flex;
+        width: 100%;
+    }
+    .similiar-hotel{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .similiar-hotel .card{
+        max-height: none !important;
+    }
+
+    .similiar-hotel .card img{
+        height: 100%;
+        max-height: 150px;
+        object-fit: cover;
+    }
+
+    .similiar-hotel .card a{
+        background: #f5f5f5;
+        border: none;
+        color: #000;
+        font-weight: bold;
+    }
+
+    .similiar-hotel .card a:hover{
+        background: #000;
+        color: #fff;
+    }
+
+
+    @media only screen and (min-width: 1360px) {
+        .cd__main {
+            max-width: 1280px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 24px;
+        }
+    }
+</style>
+
+<main class="cd__main">
+    <div class="container my-5">
+        <div class="row" id="container">
+            <div class="col-md-8">
+
+                <div id="galleryView">
+                    <div id="galleryContainer">
+                        <div id="leftView"></div>
+                        <button id="navLeft" class="navBtns"><i class="fas fa-arrow-left fa-1"></i></button>
+                            <div id="mainView">
+                            </div>
+                        <div id="rightView"></div>
+                        <button id="navRight" class="navBtns"><i class="fas fa-arrow-right fa-1"></i></button>
+                    </div>
+                </div>
+                <div id="tilesView">
+                    <div id="tilesContainer"></div>
+                </div>
+                <div id="toggleContainer">
+                    <label>Carousel</label>
+                    <div id="toggle">
+                        <div id="outer3">
+                            <div id="slider3"></div>
+                        </div>
+                        <label>Tiles</label>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-md-4">
+                <div class="main-description px-2">
+                    <div class="category text-bold">
+                        Status: {{#if hotel.status }} Available{{/if}}
+                    </div>
+                    <div class="product-title text-bold my-3">
+                        {{hotel.name}}
+                    </div>
+
+                    <div class="price-area my-4">
+                        <p class="old-price mb-1">
+                            <del>$ {{hotel.price}}</del>
+                            <span class="old-price-discount text-danger">(20% off)</span></p>
+                        <p class="old-price mb-1">
+                            <span class="text-danger">Time remaining:</span>
+                            <span class="text-danger">24:00:00</span></p>
+                        <span class="old-price-discount text-danger">(20% off)</span>
+                        <p class="text-secondary mb-1">(Additional tax may apply on checkout)</p>
+                    </div>
+
+
+                    <div class="buttons d-flex my-5 align-items-center">
+                        <div class="block date">
+                            <label for="date">Check in date:</label><input type="date" class="form-control" id="date" name="date">
+                        </div>
+                        <div class="block ms-2">
+                            <button class="shadow btn custom-btn">Book now</button>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <div class="product-details my-4">
+                    <p class="details-title text-color mb-1">Hotel Details</p>
+                    <p class="description">{{hotel.description}}</p>
+                </div>
+
+                <div class="row questions bg-light p-3">
+                    <div class="col-md-1 icon">
+                        <i class="fa-brands fa-rocketchat questions-icon"></i>
+                    </div>
+                    <div class="col-md-11 text">
+                        Have a question about our this hotel? Feel free to contact our representatives via live
+                        chat or email.
+                    </div>
+                </div>
+
+                <div class="delivery my-4">
+                    <p class="font-weight-bold mb-0"><span><i class="fa-solid fa-location-arrow"></i></span> <b> {{hotel.address}}</b></p>
+                    <p class="text-secondary"><a href="https://www.google.com/maps/search/{{hotel.address}}" target="_blank">Check on Google Maps</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container similar-products my-4">
+        <hr>
+        <p class="display-5">Similar Hotels</p>
+
+        <div class="row similiar-hotel">
+            {{#each hotels}}
+            <div class="col-md-3 mx-3">
+                <div class="card">
+                    <img class="card-img-top" src="{{this.image.[0]}}" alt="Preview">
+                    <div class="card-body">
+                        <h4 class="card-title">{{this.name}}</h4>
+                        <p class="card-text">$ {{this.price}}</p>
+                        <a href="/hotel-detail/{{this.name}}" class="btn btn-primary">See Details</a>
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+    </div>
+</main>
+
+<div id="myModal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="modelImg">
+    <div id="caption"></div>
+</div>
+
+<script>
+    // const mainImg = document.querySelector('.main-img img');
+    // let previews = document.getElementsByClassName('preview-img');
+    // previews = Array.from(previews);
+    // console.log(previews);
+    //
+    // previews.forEach(preview => {
+    //     preview.addEventListener('click', function () {
+    //         mainImg.src = this.src;
+    //         console.log('clicked: ' + this.src);
+    //     });
+    // });
+
+    document.getElementById("outer3").addEventListener("click", toggleState3);
+
+    function toggleState3() {
+        let galleryView = document.getElementById("galleryView")
+        let tilesView = document.getElementById("tilesView")
+        let outer = document.getElementById("outer3");
+        let slider = document.getElementById("slider3");
+        let tilesContainer = document.getElementById("tilesContainer");
+        if (slider.classList.contains("active")) {
+            slider.classList.remove("active");
+            outer.classList.remove("outerActive");
+            galleryView.style.display = "flex";
+            tilesView.style.display = "none";
+
+            while (tilesContainer.hasChildNodes()) {
+                tilesContainer.removeChild(tilesContainer.firstChild)
+            }
+        } else {
+            slider.classList.add("active");
+            outer.classList.add("outerActive");
+            galleryView.style.display = "none";
+            tilesView.style.display = "flex";
+
+            for (let i = 0; i < imgObject.length - 1; i++) {
+                let tileItem = document.createElement("div");
+                tileItem.classList.add("tileItem");
+                tileItem.style.background =  "url(" + imgObject[i] + ")";
+                tileItem.style.backgroundSize = "contain";
+                tilesContainer.appendChild(tileItem);
+            }
+        };
+    }
+
+    let imgObject = [];
+    {{#each hotel.image}}
+    imgObject.push("{{this}}");
+    {{/each}}
+    console.log(imgObject);
+    let mainImg = 0;
+    let prevImg = imgObject.length - 1;
+    let nextImg = 1;
+
+    function loadGallery() {
+
+        let mainView = document.getElementById("mainView");
+        mainView.innerHTML = "<img src='" + imgObject[mainImg] + "' id='" + "myImg" + "'>";
+        // mainView.style.background = "url(" + imgObject[mainImg] + ")";
+
+        let leftView = document.getElementById("leftView");
+        leftView.style.background = "url(" + imgObject[prevImg] + ")";
+
+        let rightView = document.getElementById("rightView");
+        rightView.style.background = "url(" + imgObject[nextImg] + ")";
+
+
+
+    };
+
+    function scrollRight() {
+
+        prevImg = mainImg;
+        mainImg = nextImg;
+        if (nextImg >= (imgObject.length -1)) {
+            nextImg = 0;
+        } else {
+            nextImg++;
+        };
+        loadGallery();
+    };
+
+    function scrollLeft() {
+        nextImg = mainImg
+        mainImg = prevImg;
+
+        if (prevImg === 0) {
+            prevImg = imgObject.length - 1;
+        } else {
+            prevImg--;
+        };
+        loadGallery();
+    };
+
+    document.getElementById("navRight").addEventListener("click", scrollRight);
+    document.getElementById("navLeft").addEventListener("click", scrollLeft);
+    document.getElementById("rightView").addEventListener("click", scrollRight);
+    document.getElementById("leftView").addEventListener("click", scrollLeft);
+    document.addEventListener('keyup',function(e){
+        if (e.keyCode === 37) {
+            scrollLeft();
+        } else if(e.keyCode === 39) {
+            scrollRight();
+        }
+    });
+
+    const modal = document.getElementById("myModal");
+    const modalImg = document.getElementById("modalImg");
+    const img = document.getElementById("myImg");
+    const captionText = document.getElementById("caption");
+    console.log(modal, modalImg, img, captionText);
+
+    // img.addEventListener('click', function () {
+    //     modal.style.display = "block";
+    //     modalImg.src = this.src;
+    //     captionText.innerHTML = this.alt;
+    // });
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+
+    loadGallery();
+
+</script>

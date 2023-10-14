@@ -3,7 +3,7 @@ button {
     border-radius: 5px;
     outline: none;
     border: none;
-    transition: all 0.25s all;
+    transition: all 0.25s ease-in-out;
 }
 button a {
     text-decoration: none;

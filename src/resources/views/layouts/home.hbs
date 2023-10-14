@@ -6,7 +6,7 @@
                 <div class="span">Arrival</div>
             </div>
             <div class="form-control">
-                <input aria-label="booking" type="date"/>
+                <input aria-label="booking" type="date" name="arrival_date"/>
             </div>
         </div>
         <div class="form-item">
@@ -14,7 +14,7 @@
                 <div class="span">Departure</div>
             </div>
             <div class="form-control">
-                <input aria-label="booking" type="date"/>
+                <input aria-label="booking" type="date" name="departure_date"/>
             </div>
         </div>
         <div class="form-item">
@@ -39,13 +39,30 @@
     <div class="container">
         <h1>RECOMMENDED</h1>
         <div class="row mt-5">
-            <div class="col-lg-4">
+            {{#each hotels}}
+                    <div class="col-lg-4">
+                        <div class="banchay">
+                            <div class="anh-1">
+                                <img src="{{this.image.[0]}}" alt="anh-1"/>
+                                <div class="banchay__desc">
+                                    <h3 class="bedroom">{{this.name}}</h3>
+                                    <a href="/hotel-detail/{{this.name}}">
+                                        <button class="price">$ {{this.price}}</button>
+                                    </a>
+                                    <span>{{this.description}}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            {{/each}}
+
+            <!--<div class="col-lg-4">
                 <div class="banchay">
                     <div class="anh-1">
                         <img src="img/01.jpg" alt="anh-1"/>
                         <div class="banchay__desc">
                             <h3 class="bedroom">BED ROOM</h3>
-                            <a href="checkout.html"><a href="checkout.html">
+                            <a href="checkout.hbs"><a href="checkout.hbs">
                                 <button class="price">$250</button>
                             </a></a>
                             <span>Add a description of the image here <br/>Lorem ipsum dolor
@@ -57,13 +74,14 @@
                     </div>
                 </div>
             </div>
+
             <div class="col-lg-4">
                 <div class="banchay">
                     <div class="anh-2">
                         <img src="img/02.jpg" alt="anh-2"/>
                         <div class="banchay__desc">
                             <h3 class="bedroom">BED ROOM</h3>
-                            <a href="checkout.html">
+                            <a href="checkout.hbs">
                                 <button class="price">$250</button>
                             </a>
                             <span>Add a description of the image here <br/>Lorem ipsum dolor
@@ -75,13 +93,14 @@
                     </div>
                 </div>
             </div>
+
             <div class="col-lg-4">
                 <div class="banchay">
                     <div class="anh-3">
                         <img src="img/03.jpg" alt="anh-3"/>
                         <div class="banchay__desc">
                             <h3 class="bedroom">BED ROOM</h3>
-                            <a href="checkout.html">
+                            <a href="checkout.hbs">
                                 <button class="price">$250</button>
                             </a>
                             <span>Add a description of the image here <br/>Lorem ipsum dolor
@@ -92,7 +111,8 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div>-->
+
         </div>
     </div>
 </section>
@@ -124,7 +144,7 @@
                         <img src="img/moi-2.jpg" alt="anh-1"/>
                         <div class="banchay__desc">
                             <h3 class="bedroom">BED ROOM</h3>
-                            <a href="checkout.html">
+                            <a href="checkout.hbs">
                                 <button class="price">$250</button>
                             </a>
                             <span>Add a description of the image here <br/>Lorem ipsum dolor
@@ -142,7 +162,7 @@
                         <img src="img/moi-3.jpg" alt="anh-1"/>
                         <div class="banchay__desc">
                             <h3 class="bedroom">BED ROOM</h3>
-                            <a href="checkout.html">
+                            <a href="checkout.hbs">
                                 <button class="price">$250</button>
                             </a>
                             <span>Add a description of the image here <br/>Lorem ipsum dolor
@@ -160,7 +180,7 @@
                         <img src="img/moi-4.jpg" alt="anh-1"/>
                         <div class="banchay__desc">
                             <h3 class="bedroom">BED ROOM</h3>
-                            <a href="checkout.html">
+                            <a href="checkout.hbs">
                                 <button class="price">$250</button>
                             </a>
                             <span>Add a description of the image here <br/>Lorem ipsum dolor
@@ -273,5 +293,29 @@
 
     wrapper.addEventListener("mouseover", () => clearInterval(intervalId));
     wrapper.addEventListener("mouseleave", autoSlide);
+
+    const arrivalDate = document.querySelector("input[name=arrival_date]");
+    const departureDate = document.querySelector("input[name=departure_date]");
+    const bookingForm = document.querySelector(".booking__now");
+
+    departureDate.onchange = () => {
+        if (arrivalDate.value > departureDate.value) {
+            alert("Departure date must be greater than arrival date");
+            departureDate.value = '';
+        }
+    };
+
+    bookingForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        if (!arrivalDate?.value || !departureDate?.value) {
+            alert("Please fill in all fields");
+            return;
+        }
+        if (arrivalDate.value > departureDate.value) {
+            alert("Departure date must be greater than arrival date");
+        } else {
+            bookingForm.submit();
+        }
+    });
 
 </script>

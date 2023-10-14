@@ -1,0 +1,86 @@
+<div class="container-fluid text-center">
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top" aria-label="menu">
+            <div class="logo">
+                <a class="navbar-brand" href="/"><img src="../img/logo/logo.png" alt="logo"/></a>
+            </div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/" title="Trang chủ">HOME</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="about" title="Giới thiệu">ABOUT</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                           data-bs-toggle="dropdown"
+                           aria-expanded="false" title="Thư viện">GALLERY</a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="/gallery/ho-chi-minh">Ho Chi Minh</a></li>
+                            <li><a class="dropdown-item" href="/gallery/ha-noi">Ha Noi</a></li>
+                            <li><a class="dropdown-item" href="/gallery/hoi-an">Hoi An</a></li>
+                            <li><a class="dropdown-item" href="/gallery/ha-long-bay">Ha Long Bay</a></li>
+                            <li><a class="dropdown-item" href="/gallery/da-lat">Da Lat</a></li>
+                            <li>
+                                <hr class="dropdown-divider"/>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="/gallery/all">ALL...</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="blog" title="Blog">BLOG</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="contact-us" title="Liên hệ chúng tôi">CONTACT US</a>
+                    </li>
+                </ul>
+                <div class="nav-item dropdown" id="user-dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                       data-bs-toggle="dropdown"
+                       aria-expanded="false" title="Tài khoản">
+                        <i class="fas fa-user-circle"><span id="displayName" class="ms-1">Hello {{userDisplayName}}</span></i>
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="#">Profile</a></li>
+                        <li><a class="dropdown-item" href="#">Change Password</a></li>
+                        <li><a class="dropdown-item" href="#">Change Info</a></li>
+                        <li>
+                            <hr class="dropdown-divider"/>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="/auth/logout">Logout</a>
+                        </li>
+                    </ul>
+                </div>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-danger" type="submit">Search</button>
+                </form>
+            </div>
+        </nav>
+        <div id="back-to-top">
+            <button onclick="topFunction()">
+                <svg xmlns="http://www.w3.org/2000/svg"
+                     viewBox="0 0 320 512">
+                    <!--! Font Awesome Pro 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                    <path
+                            d="M182.6 137.4c-12.5-12.5-32.8-12.5-45.3 0l-128 128c-9.2 9.2-11.9 22.9-6.9 34.9s16.6 19.8 29.6 19.8H288c12.9 0 24.6-7.8 29.6-19.8s2.2-25.7-6.9-34.9l-128-128z"/>
+                </svg>
+            </button>
+        </div>
+    </header>
+</div>
+
+<script>
+    const userDropdown = document.getElementById("user-dropdown");
+
+
+</script>

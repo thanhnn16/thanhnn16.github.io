@@ -2,7 +2,7 @@
     <header>
         <nav class="navbar navbar-expand-lg navbar-light fixed-top" aria-label="menu">
             <div class="logo">
-                <a class="navbar-brand" href="./index"><img src="../img/logo/logo.png" alt="logo"/></a>
+                <a class="navbar-brand" href="/"><img src="../img/logo/logo.png" alt="logo"/></a>
             </div>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent"
@@ -63,7 +63,7 @@
                                             <img src="../../../img/logo/login.jpg" class="img-fluid" alt="Sample image">
                                         </div>
                                         <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
-                                            <form>
+                                            <form method="post" id="login-form" action="/auth/login">
                                                 <div
                                                         class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
                                                     <p class="lead fw-normal mb-0 me-3">Sign in with</p>
@@ -85,18 +85,22 @@
                                                 </div>
 
                                                 <!-- Email input -->
-                                                <div class="form-outline mb-4">
-                                                    <input type="email" id="form3Example3"
+                                                <div class="form-outline mb-4" style="text-align: left">
+                                                    <label class="form-label" for="form3Example3">Email address</label>
+                                                    <input type="email" id="email"
+                                                           name="email"
                                                            class="form-control form-control-lg"
                                                            placeholder="Enter a valid email address"/>
-                                                    <label class="form-label" for="form3Example3">Email address</label>
+                                                    <div class="errorEmail" style="color: red"></div>
                                                 </div>
                                                 <!-- Password input -->
-                                                <div class="form-outline mb-3">
-                                                    <input type="password" id="form3Example4"
+                                                <div class="form-outline mb-3" style="text-align: left">
+                                                    <label class="form-label" for="form3Example4">Password</label>
+                                                    <input type="password" id="pass"
+                                                           name="pass"
                                                            class="form-control form-control-lg"
                                                            placeholder="Enter password"/>
-                                                    <label class="form-label" for="form3Example4">Password</label>
+                                                    <div class="errorPassword" style="color: red"></div>
                                                 </div>
                                                 <div class="d-flex justify-content-between align-items-center">
                                                     <!-- Checkbox -->
@@ -110,11 +114,11 @@
                                                     <a href="#!" class="text-body">Forgot password?</a>
                                                 </div>
                                                 <div class="text-center text-lg-start mt-4 pt-2">
-                                                    <button type="button" class="btn btn-primary btn-lg"
+                                                    <button type="submit" class="btn btn-primary btn-lg"
                                                             style="padding-left: 2.5rem; padding-right: 2.5rem;">Login
                                                     </button>
                                                     <p class="small fw-bold mt-2 pt-1 mb-0">Don't have an account? <a
-                                                            href="../../../register"
+                                                            href="../../../auth/signup"
                                                             class="link-danger">Register</a></p>
                                                 </div>
                                             </form>
@@ -149,3 +153,37 @@
         </div>
     </header>
 </div>
+<script>
+
+    const form = document.getElementById('login-form');
+
+    const emailError = document.querySelector('.errorEmail');
+    const passError = document.querySelector('.errorPassword');
+
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const email = document.getElementById('email').value;
+        const pass = document.getElementById('pass').value;
+        console.log(email, pass)
+        emailError.innerHTML = '';
+        passError.innerHTML = '';
+        try {
+            const res = await fetch('/auth/login', {
+                method: 'POST',
+                body: JSON.stringify({email, pass}),
+                headers: {'Content-Type': 'application/json'}
+            });
+            const data = await res.json();
+            console.log(data);
+            if (data.errors) {
+                emailError.innerHTML = data.errors.email;
+                passError.innerHTML = data.errors.pass;
+            }
+            if (data.user) {
+                location.assign('/');
+            }
+        } catch (err) {
+            console.log(err);
+        }
+    });
+</script>
