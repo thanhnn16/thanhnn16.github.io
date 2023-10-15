@@ -14,18 +14,18 @@ function route(app) {
     app.use('/auth', authRouter)
 
     app.get('/about', (req, res) => {
-        res.render('about');
+        res.render('about', {title: 'About'});
     });
 
     app.get('/blog', (req, res) => {
-        res.render('blog');
+        res.render('blog', {title: 'Blog'});
     });
 
     app.get('/contact-us', (req, res) => {
-        res.render('contact-us');
+        res.render('contact-us', {title: 'Contact Us'});
     });
 
-    app.get('/set-cookies', (req, res) => {
+    /*app.get('/set-cookies', (req, res) => {
         res.cookie('newUser', true, {maxAge: 1000 * 60 * 60 * 24, httpOnly: true, secure: false});
         res.send('You got the cookies!')
     });
@@ -34,16 +34,16 @@ function route(app) {
         const cookies = req.cookies;
         console.log(cookies);
         res.json(cookies);
-    });
+    });*/
 
     app.get('/checkout', requireAuth, (req, res) => {
-        res.render('checkout');
+        res.render('checkout', {title: 'Checkout'});
     });
 
     app.get('/', async (req, res) => {
         const hotelsFromDB = await Hotel.find();
         const hotels = hotelsFromDB.map(hotel => hotel.toObject());
-        res.render('home', {hotels});
+        res.render('home', {hotels, title: 'Home'});
     });
 }
 

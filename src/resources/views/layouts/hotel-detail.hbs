@@ -8,7 +8,6 @@
 
     #myImg:hover {opacity: 0.7;}
 
-    /* The Modal (background) */
     .modal {
         display: none; /* Hidden by default */
         position: fixed; /* Stay in place */
@@ -120,7 +119,6 @@
         height: 250px;
         margin: 5px;
         border-radius: 5px;
-
         transition: all 0.5s ease;
     }
 
@@ -146,7 +144,7 @@
     }
 
     #tilesView {
-        min-height: 100vh;
+        /*min-height: 100vh;*/
         display: none;
         justify-content: center;
     }
@@ -212,8 +210,8 @@
     }
 
     #leftView {
-        height: 400px;
-        width: 150px;
+        height: 350px;
+        width: 100px;
         opacity: 0.5;
         border-radius: 5px;
         transform: skewy(5deg);
@@ -333,13 +331,14 @@
 <main class="cd__main">
     <div class="container my-5">
         <div class="row" id="container">
-            <div class="col-md-8">
+            <div class="col-md-7">
 
                 <div id="galleryView">
                     <div id="galleryContainer">
                         <div id="leftView"></div>
                         <button id="navLeft" class="navBtns"><i class="fas fa-arrow-left fa-1"></i></button>
                             <div id="mainView">
+                                <img id="mainViewImg" src="" alt="{{hotel.name}}">
                             </div>
                         <div id="rightView"></div>
                         <button id="navRight" class="navBtns"><i class="fas fa-arrow-right fa-1"></i></button>
@@ -359,7 +358,7 @@
                 </div>
 
             </div>
-            <div class="col-md-4">
+            <div class="col-md-5">
                 <div class="main-description px-2">
                     <div class="category text-bold">
                         Status: {{#if hotel.status }} Available{{/if}}
@@ -436,24 +435,13 @@
     </div>
 </main>
 
-<div id="myModal" class="modal">
+<div id="myModal" class="modal mt-5">
     <span class="close">&times;</span>
     <img class="modal-content" id="modelImg">
     <div id="caption"></div>
 </div>
 
 <script>
-    // const mainImg = document.querySelector('.main-img img');
-    // let previews = document.getElementsByClassName('preview-img');
-    // previews = Array.from(previews);
-    // console.log(previews);
-    //
-    // previews.forEach(preview => {
-    //     preview.addEventListener('click', function () {
-    //         mainImg.src = this.src;
-    //         console.log('clicked: ' + this.src);
-    //     });
-    // });
 
     document.getElementById("outer3").addEventListener("click", toggleState3);
 
@@ -499,8 +487,8 @@
 
     function loadGallery() {
 
-        let mainView = document.getElementById("mainView");
-        mainView.innerHTML = "<img src='" + imgObject[mainImg] + "' id='" + "myImg" + "'>";
+        let mainView = document.getElementById("mainViewImg");
+        mainView.src = imgObject[mainImg];
         // mainView.style.background = "url(" + imgObject[mainImg] + ")";
 
         let leftView = document.getElementById("leftView");
@@ -537,6 +525,9 @@
         loadGallery();
     };
 
+    loadGallery();
+
+
     document.getElementById("navRight").addEventListener("click", scrollRight);
     document.getElementById("navLeft").addEventListener("click", scrollLeft);
     document.getElementById("rightView").addEventListener("click", scrollRight);
@@ -550,25 +541,24 @@
     });
 
     const modal = document.getElementById("myModal");
-    const modalImg = document.getElementById("modalImg");
-    const img = document.getElementById("myImg");
+    const imgModalSrc = document.getElementById("mainViewImg");
     const captionText = document.getElementById("caption");
-    console.log(modal, modalImg, img, captionText);
+    const modalImg = document.getElementById("modelImg");
 
-    // img.addEventListener('click', function () {
-    //     modal.style.display = "block";
-    //     modalImg.src = this.src;
-    //     captionText.innerHTML = this.alt;
-    // });
+    imgModalSrc.addEventListener("click", function () {
+        modal.style.display = "block";
+        modalImg.src = this.src;
+        captionText.innerHTML = this.alt;
+    });
+
 
     // Get the <span> element that closes the modal
-    var span = document.getElementsByClassName("close")[0];
+    const span = document.getElementsByClassName("close")[0];
+    console.log('span: ', span);
 
-    // When the user clicks on <span> (x), close the modal
     span.onclick = function() {
         modal.style.display = "none";
     }
 
-    loadGallery();
 
 </script>
