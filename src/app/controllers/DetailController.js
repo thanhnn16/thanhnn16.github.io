@@ -5,8 +5,7 @@ class DetailController {
         const hotels = hotelsFromDB.map(hotel => hotel.toObject());
         await Hotel.findOne({name: req.params.slug})
             .then((hotel) => {
-                const images = hotel.image;
-                res.render('hotel-detail', {hotel: hotel.toObject(), images, title: hotel.name, hotels: hotels});
+                res.render('hotel-detail', {hotel: hotel.toObject(), title: hotel.name, hotels: hotels});
                 // console.log(images);
             })
             .catch(next);

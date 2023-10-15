@@ -1,12 +1,18 @@
 <style>
 
+    body {
+        max-width: 100%;
+    }
+
     #myImg {
         border-radius: 5px;
         cursor: pointer;
         transition: 0.3s;
     }
 
-    #myImg:hover {opacity: 0.7;}
+    #myImg:hover {
+        opacity: 0.7;
+    }
 
     .modal {
         display: none; /* Hidden by default */
@@ -18,8 +24,8 @@
         width: 100%; /* Full width */
         height: 100%; /* Full height */
         overflow: auto; /* Enable scroll if needed */
-        background-color: rgb(0,0,0); /* Fallback color */
-        background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+        background-color: rgb(0, 0, 0); /* Fallback color */
+        background-color: rgba(0, 0, 0, 0.9); /* Black w/ opacity */
     }
 
     /* Modal Content (image) */
@@ -51,13 +57,21 @@
     }
 
     @-webkit-keyframes zoom {
-        from {-webkit-transform:scale(0)}
-        to {-webkit-transform:scale(1)}
+        from {
+            -webkit-transform: scale(0)
+        }
+        to {
+            -webkit-transform: scale(1)
+        }
     }
 
     @keyframes zoom {
-        from {transform:scale(0)}
-        to {transform:scale(1)}
+        from {
+            transform: scale(0)
+        }
+        to {
+            transform: scale(1)
+        }
     }
 
     /* The Close Button */
@@ -78,7 +92,7 @@
         cursor: pointer;
     }
 
-    @media only screen and (max-width: 700px){
+    @media only screen and (max-width: 700px) {
         .modal-content {
             width: 100%;
         }
@@ -86,22 +100,22 @@
 
     #toggleContainer label {
         text-align: center;
-        width: 70px;
+        width: 50px;
     }
 
     #container {
-        height: 100vh;
+        min-height: min-content;
+        height: 100%;
+        position: relative;
         /*width: 100%;*/
         box-sizing: border-box;
     }
 
     #toggleContainer {
-        height: 10vh;
         display: flex;
-        justify-content: flex-start;
+        justify-content: center;
         align-items: center;
-        width: 95vw;
-        position: absolute;
+        width: 100%;
     }
 
     #tilesContainer {
@@ -156,7 +170,7 @@
 
     #outer3 {
         width: 100px;
-        height: 40px;
+        height: 30px;
         background-color: white;
         margin: 10px auto;
         border-radius: 3px;
@@ -165,9 +179,9 @@
     }
 
     #slider3 {
-        height: 36px;
+        height: 26px;
         width: 46px;
-        background-color: orange;
+        background-color: red;
         border-radius: 3px;
         transition: all 0.5s;
     }
@@ -178,13 +192,35 @@
         -o-transform: translatex(50px);
         transform: translatex(50px);
         transition: all 0.5s;
-        background-color: orange;
+        background-color: orangered;
     }
 
     #outer3.outerActive {
         background-color: white;
         border: 2px solid white;
         transition: all 0.5s;
+    }
+
+    #btn-booknow {
+        background-color: #fff;
+        color: red;
+        outline: solid 1px red;
+        border-radius: 5px;
+        padding: 5px 10px;
+        font-weight: bold;
+        transition: all 0.2s ease-in-out;
+    }
+
+    #btn-booknow:hover {
+        background-color: red;
+        outline: solid 1px red;
+        color: white;
+    }
+
+    #btn-booknow:active {
+        background-color: #fff;
+        color: red;
+        transform: scale(0.95);
     }
 
     #mainView {
@@ -202,6 +238,9 @@
         width: 100%;
         height: 100%;
         object-fit: cover;
+        cursor: pointer;
+        box-sizing: border-box;
+        z-index: 1;
     }
 
     #mainView:hover {
@@ -273,11 +312,7 @@
         right: 30px;
     }
 
-    #linkTag {
-        cursor: pointer;
-        z-index: 1;
-        box-sizing: border-box;
-    }
+
     .cd__main {
         background: #fff;
         padding: 30px;
@@ -287,59 +322,95 @@
         min-height: 100vh;
         flex-wrap: wrap;
         display: flex;
-        width: 100%;
+        width: 100% !important;
     }
-    .similiar-hotel{
+
+    .similiar-hotel {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
     }
 
-    .similiar-hotel .card{
+    .similiar-hotel .card {
         max-height: none !important;
     }
 
-    .similiar-hotel .card img{
+    .similiar-hotel .card img {
         height: 100%;
         max-height: 150px;
         object-fit: cover;
     }
 
-    .similiar-hotel .card a{
+    .similiar-hotel .card a {
         background: #f5f5f5;
         border: none;
         color: #000;
         font-weight: bold;
     }
 
-    .similiar-hotel .card a:hover{
+    .similiar-hotel .card a:hover {
         background: #000;
         color: #fff;
     }
 
+    @media only screen and (max-width: 992px) {
+        .similiar-hotel .card {
+            width: 100%;
+            margin-bottom: 10px;
+        }
 
-    @media only screen and (min-width: 1360px) {
-        .cd__main {
-            max-width: 1280px;
-            margin-left: auto;
-            margin-right: auto;
-            padding: 24px;
+        #galleryContainer {
+            height: 100%;
+            width: 100%;
+        }
+
+        #galleryView {
+            min-height: 200px;
+            max-height: 500px;
+            height: 100%;
+            width: 100%;
+        }
+
+        #mainView {
+            height: 100%;
+            width: 80%;
+            margin-left: 5px;
+            margin-right: 5px;
+        }
+
+        #leftView, #rightView {
+            height: 80%;
+            width: 10%;
+        }
+
+        .navBtns {
+            width: 30px;
+            height: 30px;
+        }
+
+        #navRight {
+            right: 5px;
+        }
+
+        #navLeft {
+            left: 5px;
         }
     }
+
+
 </style>
 
 <main class="cd__main">
-    <div class="container my-5">
+    <div class="container-fluid mt-5 mb-1">
         <div class="row" id="container">
-            <div class="col-md-7">
-
+            <div class="col-md-7 col-sm-12">
                 <div id="galleryView">
                     <div id="galleryContainer">
                         <div id="leftView"></div>
                         <button id="navLeft" class="navBtns"><i class="fas fa-arrow-left fa-1"></i></button>
-                            <div id="mainView">
-                                <img id="mainViewImg" src="" alt="{{hotel.name}}">
-                            </div>
+                        <div id="mainView">
+                            <img id="mainViewImg" src="" alt="{{hotel.name}}">
+                        </div>
                         <div id="rightView"></div>
                         <button id="navRight" class="navBtns"><i class="fas fa-arrow-right fa-1"></i></button>
                     </div>
@@ -347,7 +418,7 @@
                 <div id="tilesView">
                     <div id="tilesContainer"></div>
                 </div>
-                <div id="toggleContainer">
+                <div id="toggleContainer" class="w-100 col-12">
                     <label>Carousel</label>
                     <div id="toggle">
                         <div id="outer3">
@@ -358,12 +429,12 @@
                 </div>
 
             </div>
-            <div class="col-md-5">
+            <div class="col-md-5 col-sm-9">
                 <div class="main-description px-2">
                     <div class="category text-bold">
                         Status: {{#if hotel.status }} Available{{/if}}
                     </div>
-                    <div class="product-title text-bold my-3">
+                    <div class="product-title text-bold my-3" style="font-size: 2.5rem; color: red">
                         {{hotel.name}}
                     </div>
 
@@ -371,22 +442,35 @@
                         <p class="old-price mb-1">
                             <del>$ {{hotel.price}}</del>
                             <span class="old-price-discount text-danger">(20% off)</span></p>
-                        <p class="old-price mb-1">
+                        <p class="old-price mb-1" style="font-size: 1.5rem">
                             <span class="text-danger">Time remaining:</span>
-                            <span class="text-danger">24:00:00</span></p>
-                        <span class="old-price-discount text-danger">(20% off)</span>
+                            <span class="text-danger" id="time-countdown">24:00:00</span></p>
                         <p class="text-secondary mb-1">(Additional tax may apply on checkout)</p>
                     </div>
 
 
-                    <div class="buttons d-flex my-5 align-items-center">
-                        <div class="block date">
-                            <label for="date">Check in date:</label><input type="date" class="form-control" id="date" name="date">
+                    <form method="get" action="/checkout" id="booking-form" class="buttons d-flex my-5 align-items-center">
+                        <div class="flex w-50">
+                            <div class="block date">
+                                <label for="arrival">Check in:</label><input type="date" class="form-control my-1"
+                                                                             id="arrival-date"
+                                                                             name="arrival">
+                            </div>
+                            <div class="block date">
+                                <label for="departure">Check out:</label><input type="date" class="form-control mt-1"
+                                                                                id="departure-date" name="departure">
+                            </div>
                         </div>
-                        <div class="block ms-2">
-                            <button class="shadow btn custom-btn">Book now</button>
+                        <div class="d-flex w-40 ms-2">
+                            <div class="block ms-2">
+                                <button class="shadow btn custom-btn" type="submit" id="btn-booknow">Book now</button>
+                            </div>
                         </div>
-                    </div>
+                        <input type="hidden" name="hotel-name" value="{{hotel.name}}">
+                        <input type="hidden" name="hotel-price" value="{{hotel.price}}">
+                        <input type="hidden" name="hotel-address" value="{{hotel.address}}">
+                        <input type="hidden" name="hotel-status" value="{{hotel.status}}">
+                    </form>
 
 
                 </div>
@@ -407,8 +491,10 @@
                 </div>
 
                 <div class="delivery my-4">
-                    <p class="font-weight-bold mb-0"><span><i class="fa-solid fa-location-arrow"></i></span> <b> {{hotel.address}}</b></p>
-                    <p class="text-secondary"><a href="https://www.google.com/maps/search/{{hotel.address}}" target="_blank">Check on Google Maps</a></p>
+                    <p class="font-weight-bold mb-0"><span><i class="fa-solid fa-location-arrow"></i></span>
+                        <b> {{hotel.address}}</b></p>
+                    <p class="text-secondary"><a href="https://www.google.com/maps/search/{{hotel.address}}"
+                                                 target="_blank" style="color: red">Check on Google Maps</a></p>
                 </div>
             </div>
         </div>
@@ -419,16 +505,16 @@
 
         <div class="row similiar-hotel">
             {{#each hotels}}
-            <div class="col-md-3 mx-3">
-                <div class="card">
-                    <img class="card-img-top" src="{{this.image.[0]}}" alt="Preview">
-                    <div class="card-body">
-                        <h4 class="card-title">{{this.name}}</h4>
-                        <p class="card-text">$ {{this.price}}</p>
-                        <a href="/hotel-detail/{{this.name}}" class="btn btn-primary">See Details</a>
+                <div class="col-md-3 mx-3">
+                    <div class="card">
+                        <img class="card-img-top" src="{{this.image.[0]}}" alt="Preview">
+                        <div class="card-body">
+                            <h4 class="card-title">{{this.name}}</h4>
+                            <p class="card-text">$ {{this.price}}</p>
+                            <a href="/hotel-detail/{{this.name}}" class="btn btn-primary">See Details</a>
+                        </div>
                     </div>
                 </div>
-            </div>
             {{/each}}
         </div>
     </div>
@@ -469,17 +555,18 @@
             for (let i = 0; i < imgObject.length - 1; i++) {
                 let tileItem = document.createElement("div");
                 tileItem.classList.add("tileItem");
-                tileItem.style.background =  "url(" + imgObject[i] + ")";
-                tileItem.style.backgroundSize = "contain";
+                tileItem.style.background = "url(" + imgObject[i] + ")";
+                tileItem.style.backgroundSize = "cover";
                 tilesContainer.appendChild(tileItem);
             }
-        };
+        }
+        ;
     }
 
     let imgObject = [];
-    {{#each hotel.image}}
-    imgObject.push("{{this}}");
-    {{/each}}
+        {{#each hotel.image}}
+        imgObject.push("{{this}}");
+        {{/each}}
     console.log(imgObject);
     let mainImg = 0;
     let prevImg = imgObject.length - 1;
@@ -487,17 +574,21 @@
 
     function loadGallery() {
 
-        let mainView = document.getElementById("mainViewImg");
-        mainView.src = imgObject[mainImg];
-        // mainView.style.background = "url(" + imgObject[mainImg] + ")";
+        const mainViewImg = document.getElementById("mainViewImg");
+        mainViewImg.src = imgObject[mainImg];
+        mainViewImg.style.display = "none";
+
+        const mainView = document.getElementById("mainView");
+        mainView.style.background = "url(" + imgObject[mainImg] + ")";
+        mainView.style.backgroundSize = "cover";
 
         let leftView = document.getElementById("leftView");
         leftView.style.background = "url(" + imgObject[prevImg] + ")";
+        leftView.style.backgroundSize = "cover";
 
         let rightView = document.getElementById("rightView");
         rightView.style.background = "url(" + imgObject[nextImg] + ")";
-
-
+        rightView.style.backgroundSize = "cover";
 
     };
 
@@ -505,11 +596,12 @@
 
         prevImg = mainImg;
         mainImg = nextImg;
-        if (nextImg >= (imgObject.length -1)) {
+        if (nextImg >= (imgObject.length - 1)) {
             nextImg = 0;
         } else {
             nextImg++;
-        };
+        }
+        ;
         loadGallery();
     };
 
@@ -521,7 +613,8 @@
             prevImg = imgObject.length - 1;
         } else {
             prevImg--;
-        };
+        }
+        ;
         loadGallery();
     };
 
@@ -532,23 +625,25 @@
     document.getElementById("navLeft").addEventListener("click", scrollLeft);
     document.getElementById("rightView").addEventListener("click", scrollRight);
     document.getElementById("leftView").addEventListener("click", scrollLeft);
-    document.addEventListener('keyup',function(e){
+    document.addEventListener('keyup', function (e) {
         if (e.keyCode === 37) {
             scrollLeft();
-        } else if(e.keyCode === 39) {
+        } else if (e.keyCode === 39) {
             scrollRight();
         }
     });
 
     const modal = document.getElementById("myModal");
     const imgModalSrc = document.getElementById("mainViewImg");
+    const mainView = document.getElementById("mainView");
     const captionText = document.getElementById("caption");
     const modalImg = document.getElementById("modelImg");
 
-    imgModalSrc.addEventListener("click", function () {
+    mainView.style.cursor = "pointer";
+    mainView.addEventListener("click", function () {
         modal.style.display = "block";
-        modalImg.src = this.src;
-        captionText.innerHTML = this.alt;
+        modalImg.src = imgModalSrc.src;
+        captionText.innerHTML = imgModalSrc.alt;
     });
 
 
@@ -556,9 +651,60 @@
     const span = document.getElementsByClassName("close")[0];
     console.log('span: ', span);
 
-    span.onclick = function() {
+    span.onclick = function () {
         modal.style.display = "none";
     }
+
+    const btnBookNow = document.getElementById('btn-booknow');
+    const arrivalDate = document.getElementById('arrival-date');
+    const departureDate = document.getElementById('departure-date');
+
+    function validateDate() {
+        if (arrivalDate.value === '' || departureDate.value === '') {
+            alert('Please select arrival and departure date');
+            return false;
+        } else if (arrivalDate.value > departureDate.value) {
+            alert('Please select valid arrival and departure date');
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+    const bookingForm = document.getElementById('booking-form');
+
+    bookingForm.addEventListener('submit', function (ev) {
+        if (!validateDate) {
+            ev.preventDefault();
+        }
+    });
+
+    const timeCountdown = document.getElementById('time-countdown');
+    const timeCountdownValue = timeCountdown.innerHTML;
+    const timeCountdownArray = timeCountdownValue.split(':');
+    let hour = parseInt(timeCountdownArray[0]);
+    let minute = parseInt(timeCountdownArray[1]);
+    let second = parseInt(timeCountdownArray[2]);
+    let timeInterval = setInterval(function () {
+        if (second === 0) {
+            if (minute === 0) {
+                if (hour === 0) {
+                    clearInterval(timeInterval);
+                    timeCountdown.innerHTML = ('Sale time is up');
+                } else {
+                    hour--;
+                    minute = 59;
+                    second = 59;
+                }
+            } else {
+                minute--;
+                second = 59;
+            }
+        } else {
+            second--;
+        }
+        timeCountdown.innerHTML = hour + ':' + minute + ':' + second;
+    }, 1000);
 
 
 </script>

@@ -37,7 +37,9 @@ function route(app) {
     });*/
 
     app.get('/checkout', requireAuth, (req, res) => {
-        res.render('checkout', {title: 'Checkout'});
+        const hotel = req.query;
+        console.log(hotel)
+        res.render('checkout', {title: 'Checkout', hotel: hotel});
     });
 
     app.get('/', async (req, res) => {
