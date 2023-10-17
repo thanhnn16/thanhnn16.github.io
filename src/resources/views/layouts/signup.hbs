@@ -674,50 +674,68 @@
     const validationError = document.getElementById('validation-error');
 
     function validate() {
+        console.log('validate');
         const name = document.getElementById('name');
         if (name.value === '') {
             validationError.innerHTML = ('* Please enter your name.');
             name.focus();
+            return false;
         }
 
         const email = document.getElementById('email');
         if (email.value === '') {
             validationError.innerHTML = ('* Please enter your email address.');
             email.focus();
+            return false;
         } else if (!email.value.match(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/)) {
             validationError.innerHTML = ('* Please enter a valid email address.');
             email.focus();
+            return false;
         }
 
         const pass = document.getElementById('pass');
         if (pass.value === '') {
             validationError.innerHTML = ('* Please enter your password.');
             pass.focus();
+            return false;
         } else if (pass.value.length < 6) {
             validationError.innerHTML = ('* Your password must be at least 6 characters long.');
             pass.focus();
+            return false;
         }
 
         const rePass = document.getElementById('re_pass');
         if (rePass.value === '') {
             validationError.innerHTML = ('* Please confirm your password.');
             rePass.focus();
+            return false;
         } else if (rePass.value !== pass.value) {
             validationError.innerHTML = ('* Your passwords do not match.');
             rePass.focus();
+            return false;
         }
 
         const agreeTerm = document.getElementById('agree-term');
         if (!agreeTerm.checked) {
             validationError.innerHTML = ('* Please agree to the terms of service.');
             agreeTerm.focus();
+            return false;
         }
+        return true;
     }
 
+
     signupForm.addEventListener('submit', async function (event) {
-        validationError.innerHTML = ('');
-        validate();
+        console.log('clicked')
         event.preventDefault();
+
+        validationError.innerHTML = ('');
+        if(!validate()){
+            console.log('validate failed')
+            return;
+        }
+        console.log('validate passed')
+
         nameError.innerHTML = '';
         emailError.innerHTML = '';
         passError.innerHTML = '';
@@ -739,7 +757,6 @@
                 passError.innerHTML = data.errors.pass;
                 nameError.innerHTML = data.errors.name;
             }
-
             if (data.user) {
                 location.assign('/');
 
@@ -748,6 +765,5 @@
             console.log(err);
         }
     });
-
 
 </script>

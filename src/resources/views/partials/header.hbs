@@ -87,20 +87,20 @@
                                                 <!-- Email input -->
                                                 <div class="form-outline mb-4" style="text-align: left">
                                                     <label class="form-label" for="form3Example3">Email address</label>
-                                                    <input type="email" id="email"
-                                                           name="email"
+                                                    <input type="email" id="email_login"
+                                                           name="email_login"
                                                            class="form-control form-control-lg"
                                                            placeholder="Enter a valid email address"/>
-                                                    <div class="errorEmail" style="color: red"></div>
+                                                    <div class="errorEmail_login" style="color: red"></div>
                                                 </div>
                                                 <!-- Password input -->
                                                 <div class="form-outline mb-3" style="text-align: left">
                                                     <label class="form-label" for="form3Example4">Password</label>
-                                                    <input type="password" id="pass"
-                                                           name="pass"
+                                                    <input type="password" id="pass_login"
+                                                           name="pass_login"
                                                            class="form-control form-control-lg"
                                                            placeholder="Enter password"/>
-                                                    <div class="errorPassword" style="color: red"></div>
+                                                    <div class="errorPassword_login" style="color: red"></div>
                                                 </div>
                                                 <div class="d-flex justify-content-between align-items-center">
                                                     <!-- Checkbox -->
@@ -155,29 +155,29 @@
 </div>
 <script>
 
-    const form = document.getElementById('login-form');
+    const login_form = document.getElementById('login-form');
 
-    const emailError = document.querySelector('.errorEmail');
-    const passError = document.querySelector('.errorPassword');
+    const emailErrorLogin = document.querySelector('.errorEmail_login');
+    const passErrorLogin = document.querySelector('.errorPassword_login');
 
-    form.addEventListener('submit', async (e) => {
+    login_form.addEventListener('submit', async (e) => {
         e.preventDefault();
-        const email = document.getElementById('email').value;
-        const pass = document.getElementById('pass').value;
-        console.log(email, pass)
+        const email_login = document.getElementById('email_login').value;
+        const pass_login = document.getElementById('pass_login').value;
+        console.log(email_login, pass_login)
         emailError.innerHTML = '';
         passError.innerHTML = '';
         try {
             const res = await fetch('/auth/login', {
                 method: 'POST',
-                body: JSON.stringify({email, pass}),
+                body: JSON.stringify({email: email_login, pass: pass_login}),
                 headers: {'Content-Type': 'application/json'}
             });
             const data = await res.json();
             console.log(data);
             if (data.errors) {
-                emailError.innerHTML = data.errors.email;
-                passError.innerHTML = data.errors.pass;
+                emailErrorLogin.innerHTML = data.errors.email_login;
+                passErrorLogin.innerHTML = data.errors.pass_login;
             }
             if (data.user) {
                 location.assign('/');
