@@ -449,7 +449,8 @@
                     </div>
 
 
-                    <form method="get" action="/checkout" id="booking-form" class="buttons d-flex my-5 align-items-center">
+                    <form method="get" action="/checkout" id="booking-form"
+                          class="buttons d-flex my-5 align-items-center">
                         <div class="flex w-50">
                             <div class="block date">
                                 <label for="arrival">Check in:</label><input type="date" class="form-control my-1"
@@ -674,9 +675,16 @@
     const bookingForm = document.getElementById('booking-form');
 
     bookingForm.addEventListener('submit', function (ev) {
-        if (!validateDate) {
+        if (!validateDate()) {
             ev.preventDefault();
+            return;
         }
+        {{#if user}}
+        {{else}}
+            ev.preventDefault();
+            alert('Please login to book this hotel');
+        {{/if}}
+
     });
 
     const timeCountdown = document.getElementById('time-countdown');

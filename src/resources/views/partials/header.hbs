@@ -164,9 +164,8 @@
         e.preventDefault();
         const email_login = document.getElementById('email_login').value;
         const pass_login = document.getElementById('pass_login').value;
-        console.log(email_login, pass_login)
-        emailError.innerHTML = '';
-        passError.innerHTML = '';
+        emailErrorLogin.innerHTML = '';
+        passErrorLogin.innerHTML = '';
         try {
             const res = await fetch('/auth/login', {
                 method: 'POST',
@@ -174,10 +173,9 @@
                 headers: {'Content-Type': 'application/json'}
             });
             const data = await res.json();
-            console.log(data);
             if (data.errors) {
-                emailErrorLogin.innerHTML = data.errors.email_login;
-                passErrorLogin.innerHTML = data.errors.pass_login;
+                emailErrorLogin.innerHTML = data.errors.email;
+                passErrorLogin.innerHTML = data.errors.pass;
             }
             if (data.user) {
                 location.assign('/');

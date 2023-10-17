@@ -1,4 +1,15 @@
-Demo: https://miwth.codes
+
+## DEMO
+https://miwth.codes
+
+## Description
+**Các chức năng chính:**
+- Xử lý javascript cơ bản: validation, DOM, event, ...
+- GEO Location: ở trang checkout, sau khi chọn book phòng thì sẽ nhận được yêu cầu cấp quyền truy cập vị trí, sau khi cấp quyền thì sẽ hiển thị vị trí hiện tại của người dùng. Nếu người dùng đồng ý thì sẽ hiển thị vị trí hiện tại của người dùng vào input Address.
+- Authentication: đăng ký, đăng nhập, đăng xuất.
+- Authorization: chỉ có người dùng đã đăng nhập mới có thể đặt phòng.
+- MongoDB: lưu trữ thông tin người dùng, thông tin phòng.
+
 
 ## Installation
 
@@ -37,7 +48,13 @@ Demo: https://miwth.codes
     ```
 5. Open http://localhost:3000 in your browser
 
-6. If the problem still occurs, please contact me: 
+6. Try sudo if still fails
+    ```bash
+    sudo npm install
+    sudo npm run start
+    ```
+
+7. If the problem still occurs, please contact me: 
     - Zalo: 0879 159 499
     - Email: nongnguyenthanh.0106@gmail.com
 
